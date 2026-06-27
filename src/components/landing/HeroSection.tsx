@@ -52,7 +52,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8, duration: 0.8 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 w-full max-w-sm sm:max-w-none mx-auto"
+          className="flex flex-col items-center justify-center gap-4 sm:gap-6 w-full max-w-sm sm:max-w-none mx-auto lg:flex-row"
         >
           <AuthAwareLink to="/login" className="w-full sm:w-auto px-8 sm:px-10 py-3.5 sm:py-4 bg-brand-500 text-surface-950 font-bold rounded-full hover:bg-brand-400 hover:scale-105 transition-all flex items-center justify-center gap-2 text-base tracking-wide">
             START STAKING
