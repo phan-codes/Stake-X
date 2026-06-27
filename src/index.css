@@ -1,0 +1,139 @@
+@import "tailwindcss";
+
+@theme {
+	--font-sans:
+		"Quicksand", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+		"Noto Color Emoji";
+	--font-heading:
+		"Montserrat", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+		"Noto Color Emoji";
+
+	--color-brand-400: #a78bfa; /* Violet 400 */
+	--color-brand-500: #8b5cf6; /* Violet 500 */
+	--color-brand-600: #7c3aed; /* Violet 600 */
+
+	--color-surface-50: #f8fafc;
+	--color-surface-100: #f1f5f9;
+	--color-surface-200: #e2e8f0;
+	--color-surface-800: #1e1b4b; /* Deep Indigo for cards */
+	--color-surface-900: #0f0e25; /* Midnight for sections */
+	--color-surface-950: #05050f; /* Space dark for background */
+
+	/* SCREEN SIZES */
+	--breakpoint-sm: 376px;
+	--breakpoint-md: 664px;
+	--breakpoint-lg: 976px;
+	--breakpoint-xl: 1440px;
+}
+
+@layer base {
+	:root {
+		--background: var(--color-surface-950);
+		--foreground: var(--color-surface-50);
+	}
+
+	body {
+		background-color: var(--background);
+		color: var(--foreground);
+		font-family: var(--font-sans);
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		font-family: var(--font-heading);
+	}
+}
+
+@layer utilities {
+	.glass-panel {
+		@apply bg-surface-800/40 backdrop-blur-xl border border-white/10 shadow-[0_8px_30px_rgb(0,0,0,0.4)];
+	}
+
+	.text-gradient {
+		@apply bg-gradient-to-r from-brand-400 via-cyan-400 to-brand-600 bg-clip-text text-transparent;
+	}
+
+	/* Ticker Animations */
+	.price-text {
+		font-variant-numeric: tabular-nums;
+		transition: color 0.4s ease-out, text-shadow 0.4s ease-out;
+	}
+
+	.flash-up {
+		color: #34d399 !important; /* emerald-400 */
+		text-shadow: 0 0 12px rgba(52, 211, 153, 0.6);
+		transition: none; /* Instant flash, fade out happens when class is removed */
+	}
+
+	.flash-down {
+		color: #f87171 !important; /* red-400 */
+		text-shadow: 0 0 12px rgba(248, 113, 113, 0.6);
+		transition: none;
+	}
+
+	/* Small-screen responsive adjustments */
+	@media (max-width: 664px) {
+		.ticker-track {
+			gap: 0.75rem;
+		}
+
+		.ticker-item {
+			gap: 0.5rem;
+			padding-left: 0.625rem;
+			padding-right: 0.625rem;
+		}
+
+		.about-animation-wrap,
+		.bitcoin-animation-wrap {
+			justify-self: center;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		.inbox-message-list .inbox-message-card {
+			flex-direction: column;
+			align-items: stretch;
+			gap: 0.875rem;
+		}
+
+		.inbox-message-list .inbox-message-main {
+			align-items: flex-start;
+			gap: 0.875rem;
+		}
+
+		.inbox-message-list .inbox-message-actions {
+			width: 100%;
+			margin-top: 0;
+			padding-top: 0.75rem;
+			border-top: 1px solid rgba(255, 255, 255, 0.08);
+			justify-content: space-between;
+			flex-wrap: wrap;
+			row-gap: 0.5rem;
+		}
+
+		.inbox-message-list .inbox-message-meta {
+			flex: 1 1 auto;
+		}
+	}
+
+	@media (max-width: 376px) {
+		.inbox-message-list .inbox-message-card {
+			padding: 1rem;
+		}
+
+		.inbox-message-list .inbox-message-actions {
+			flex-direction: column;
+			align-items: stretch;
+		}
+
+		.inbox-message-list .inbox-message-actions > div {
+			justify-content: space-between;
+		}
+
+		.inbox-message-list .inbox-message-view-btn {
+			width: 100%;
+			justify-content: center;
+		}
+	}
+}

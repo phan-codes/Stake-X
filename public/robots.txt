@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /dashboard
+Disallow: /admin
+Disallow: /reset-password
+Disallow: /forgot-password
+
+Sitemap: https://prime-xbl.com/sitemap.xml

@@ -1,0 +1,24 @@
+{
+  "name": "Prime XBL — Digital Finance Cloud Solution",
+  "short_name": "Prime XBL",
+  "description": "Prime XBL is a digital platform for cryptocurrency services, forex trading, CFD trading, binary options, futures, and cloud mining. Secure operations, clear account management, and dependable tools for both new and experienced users.",
+  "start_url": "/",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#0a0a0a",
+  "background_color": "#0a0a0a",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "categories": ["finance", "crypto", "investment"]
+}

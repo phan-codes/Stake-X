@@ -1,0 +1,17 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="violetGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7c3aed" />
+      <stop offset="50%" stop-color="#8b5cf6" />
+      <stop offset="100%" stop-color="#a78bfa" />
+    </linearGradient>
+  </defs>
+  <!-- Main upward stroke (Violet) -->
+  <path d="M 12 84 L 12 88 L 34 88 L 88 16 L 88 12 L 66 12 Z" fill="url(#violetGrad)"/>
+  
+  <!-- Top-left crossing stroke (White) -->
+  <path d="M 12 16 L 12 12 L 34 12 L 45 26.67 L 32.5 43.33 Z" fill="#ffffff"/>
+  
+  <!-- Bottom-right crossing stroke (Soft Gray) -->
+  <path d="M 88 84 L 88 88 L 66 88 L 55 73.33 L 67.5 56.67 Z" fill="#e5e5e5"/>
+</svg>
