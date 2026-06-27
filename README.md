@@ -131,15 +131,6 @@ cd <project-folder>
 npm install
 ```
 
-## Configure environment variables
-
-Create a `.env` file and add your Supabase credentials:
-
-```env
-VITE_SUPABASE_URL=your_supabase_url
-VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
-```
-
 ## Start the development server
 
 ```bash
