@@ -134,7 +134,7 @@ Deno.serve(async (req) => {
 			case "kyc_approved":
 				subject = "KYC Verification Approved";
 				title = "Identity Verified Successfully";
-				message = `We are pleased to confirm that your identity verification (KYC) process is complete. Your documents have been successfully reviewed and your status is now fully approved, granting you unrestricted access to all services and features on the Prime XBL platform.`;
+				message = `We are pleased to confirm that your identity verification (KYC) process is complete. Your documents have been successfully reviewed and your status is now fully approved, granting you unrestricted access to all services and features on the StakeX platform.`;
 				details = "";
 				break;
 			case "kyc_rejected":
@@ -144,7 +144,7 @@ Deno.serve(async (req) => {
 				details = "";
 				break;
 			case "reset_password":
-				subject = "Reset Your Password - Prime XBL";
+				subject = "Reset Your Password - StakeX";
 				title = "Password Reset Request";
 				const supabaseUrl = Deno.env.get("SUPABASE_URL");
 				const supabaseServiceKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY");
@@ -170,7 +170,7 @@ Deno.serve(async (req) => {
 					});
 				}
 
-				message = `We have received a request to reset the secure password associated with your Prime XBL client profile. If you initiated this request, please proceed by clicking the authorized link below to securely update your credentials.<br><br>
+				message = `We have received a request to reset the secure password associated with your StakeX client profile. If you initiated this request, please proceed by clicking the authorized link below to securely update your credentials.<br><br>
 				<div style="text-align: center; margin: 40px 0;">
 					<a href="${linkData.properties?.action_link}" style="background-color: #f59e0b; color: #ffffff; padding: 14px 32px; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 16px; display: inline-block; font-family: 'Quicksand', -apple-system, sans-serif; box-shadow: 0 4px 6px -1px rgba(245, 158, 11, 0.2), 0 2px 4px -1px rgba(245, 158, 11, 0.1);">Reset My Password</a>
 				</div>
@@ -250,9 +250,9 @@ Deno.serve(async (req) => {
 					</tr>`;
 				break;
 			case "referral_signup":
-				subject = "New Referral Joined — Prime XBL";
+				subject = "New Referral Joined — StakeX";
 				title = "New Referral Registration";
-				message = `Great news! A new user has registered on Prime XBL using your referral link. You are now eligible to earn commission on their deposits. Keep sharing your link to grow your network and maximize your earnings.`;
+				message = `Great news! A new user has registered on StakeX using your referral link. You are now eligible to earn commission on their deposits. Keep sharing your link to grow your network and maximize your earnings.`;
 				details = `
 					<tr>
 						<td class="detail-label">Referral Name</td>
@@ -264,7 +264,7 @@ Deno.serve(async (req) => {
 					</tr>`;
 				break;
 			case "referral_commission":
-				subject = "Referral Commission Earned — Prime XBL";
+				subject = "Referral Commission Earned — StakeX";
 				title = "Commission Credited";
 				message = `Congratulations! You have earned a referral commission. A deposit was made by one of your referrals and your commission has been automatically credited to your account balance.`;
 				details = `
@@ -282,9 +282,9 @@ Deno.serve(async (req) => {
 					</tr>`;
 				break;
 			default:
-				subject = "New Notification - Prime XBL";
+				subject = "New Notification - StakeX";
 				title = "Platform Notification";
-				message = "You have received an automated communication from the Prime XBL platform.";
+				message = "You have received an automated communication from the StakeX platform.";
 				details = `
 					<tr>
 						<td class="detail-label">Payload</td>
@@ -511,11 +511,11 @@ Deno.serve(async (req) => {
 				}
         <div class="signature">
           Best regards,<br>
-          <strong>The Prime XBL Team</strong>
+          <strong>The StakeX Team</strong>
         </div>
       </div>
       <div class="footer">
-        <div class="footer-text">&copy; 2026 Prime XBL. All rights reserved.</div>
+        <div class="footer-text">&copy; 2026 StakeX. All rights reserved.</div>
         <div class="footer-note">This is an automated communication. Please do not reply directly to this email.</div>
       </div>
     </div>
@@ -531,7 +531,7 @@ Deno.serve(async (req) => {
 				Authorization: `Bearer ${resendApiKey}`,
 			},
 			body: JSON.stringify({
-				from: `Prime XBL <${resendFromEmail}>`,
+				from: `StakeX <${resendFromEmail}>`,
 				to: toAddresses,
 				subject,
 				html,

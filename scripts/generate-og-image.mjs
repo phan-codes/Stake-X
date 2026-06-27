@@ -1,6 +1,6 @@
 /**
- * Generates og-image.png for Prime XBL
- * Run: node scripts/generate-og-image.mjs
+ * Generates og-image.png for StakeX
+ * Usage: node scripts/generate-og-image.mjs
  * Requires: npm install canvas
  */
 import { createCanvas } from 'canvas';
@@ -149,7 +149,7 @@ ctx.strokeRect(borderInset, borderInset, SIZE - borderInset * 2, SIZE - borderIn
 ctx.restore();
 
 // ── Text ─────────────────────────────────────────────────────────────────────
-// "Prime XBL" — large bold
+// "StakeX" — large bold
 ctx.save();
 ctx.textAlign = 'center';
 ctx.textBaseline = 'middle';
@@ -158,9 +158,11 @@ ctx.textBaseline = 'middle';
 ctx.shadowColor = 'rgba(245, 166, 35, 0.6)';
 ctx.shadowBlur = 28;
 
-ctx.font = 'bold 148px Arial, sans-serif';
-ctx.fillStyle = '#F5A623';
-ctx.fillText('Prime XBL', SIZE / 2, SIZE * 0.43);
+ctx.font = 'bold 160px "Inter"';
+ctx.fillStyle = '#f59e0b';
+ctx.textAlign = 'center';
+ctx.textBaseline = 'middle';
+ctx.fillText('StakeX', SIZE / 2, SIZE * 0.43);
 
 // Reset shadow for subtitle
 ctx.shadowBlur = 14;

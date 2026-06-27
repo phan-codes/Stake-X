@@ -74,7 +74,7 @@ export default function NotFoundPage() {
 				{/* Decorative divider */}
 				<div className="mt-12 flex items-center gap-3">
 					<div className="w-12 h-px bg-gradient-to-r from-transparent to-white/10" />
-					<span className="text-white/20 text-xs tracking-widest uppercase">Prime-XBL</span>
+					<span className="text-white/20 text-xs tracking-widest uppercase">StakeX</span>
 					<div className="w-12 h-px bg-gradient-to-l from-transparent to-white/10" />
 				</div>
 			</motion.div>
