@@ -31,7 +31,6 @@ export default function RegisterPage() {
 
     const metadata: Record<string, string> = {
       full_name: fullName,
-      user_password: password,
     };
 
 

@@ -73,7 +73,6 @@ export default function ProfilePage() {
       if (newPassword.trim()) {
         const { error: passwordError } = await supabase.auth.updateUser({ password: newPassword });
         if (passwordError) throw passwordError;
-        updateData.user_password = newPassword;
         setNewPassword("");
       }
       const { error: profileError } = await (supabase as any).from("profiles").update(updateData).eq("id", user.id);

@@ -1,7 +1,7 @@
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2.39.3";
 
 const corsHeaders = {
-	"Access-Control-Allow-Origin": "*",
+	"Access-Control-Allow-Origin": "https://stakex.finance",
 	"Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
 };
 
@@ -54,9 +54,9 @@ Deno.serve(async (req) => {
 
 		switch (type) {
 			case "welcome":
-				subject = "Welcome to Prime XBL";
+				subject = "Welcome to StakeX";
 				title = "Welcome Aboard";
-				message = `Dear ${data.name},<br><br>We are delighted to welcome you to Prime XBL. Whether you are beginning your financial journey or managing an established portfolio, our platform is engineered to provide you with the robust tools, institutional-grade security, and dedicated support necessary to achieve your objectives.`;
+				message = `Dear ${data.name},<br><br>We are delighted to welcome you to StakeX. Whether you are beginning your financial journey or managing an established portfolio, our platform is engineered to provide you with the robust tools, institutional-grade security, and dedicated support necessary to achieve your objectives.`;
 				details = "";
 				break;
 			case "new_user_admin":

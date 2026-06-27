@@ -13,8 +13,7 @@ export default function ProtectedRoute() {
     );
   }
 
-  // If there's no Supabase URL yet (local UI preview), let them pass
-  if (!user && import.meta.env.VITE_SUPABASE_URL) {
+  if (!user) {
     return <Navigate to="/login" replace />;
   }
 

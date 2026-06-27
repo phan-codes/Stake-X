@@ -5,4 +5,4 @@ Disallow: /admin
 Disallow: /reset-password
 Disallow: /forgot-password
 
-Sitemap: https://prime-xbl.com/sitemap.xml
+Sitemap: https://stakex.finance/sitemap.xml

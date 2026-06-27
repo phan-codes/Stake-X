@@ -41,25 +41,11 @@ export default function AdminWithdrawalsPage() {
 
       // If completing the withdrawal, deduct balance first
       if (newStatus === 'completed') {
-        const { data: balanceData } = await supabase
-          .from('balances')
-          .select('balance')
-          .eq('user_id', transaction.user_id)
-          .eq('asset', 'USD')
-          .single();
-
-        const currentBalance = balanceData?.balance || 0;
-        
-        // Ensure balance doesn't go below zero
-        const newBalance = Math.max(0, currentBalance - transaction.amount);
-        
-        const { error: balanceError } = await supabase
-          .from('balances')
-          .upsert({
-            user_id: transaction.user_id,
-            asset: 'USD',
-            balance: newBalance,
-          }, { onConflict: 'user_id, asset' });
+        const { error: balanceError } = await (supabase as any).rpc('update_balance_atomic', {
+          p_user_id: transaction.user_id,
+          p_asset: 'USD',
+          p_amount: -Math.abs(transaction.amount)
+        });
 
         if (balanceError) throw balanceError;
       }
@@ -153,7 +139,7 @@ export default function AdminWithdrawalsPage() {
                     <td className="px-6 py-4">
                       {w.profiles?.wallet_address ? (
                         <div className="flex flex-col">
-                          <span className="font-mono text-xs text-white truncate max-w-[150px]" title={w.profiles.wallet_address}>
+                          <span className="font-mono text-xs text-white truncate max-w-37.5" title={w.profiles.wallet_address}>
                             {w.profiles.wallet_address}
                           </span>
                           <span className="text-[10px] text-white/40">{w.asset}</span>

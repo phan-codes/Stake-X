@@ -60,27 +60,13 @@ export default function AdminDepositsPage() {
 
       // If completing the deposit, update balance first
       if (newStatus === 'completed') {
-        // Update the depositor's balance
-        const { data: balanceData } = await supabase
-          .from('balances')
-          .select('balance')
-          .eq('user_id', transaction.user_id)
-          .eq('asset', 'USD')
-          .single();
-
-        const currentBalance = balanceData?.balance || 0;
-        
-        const { error: balanceError } = await supabase
-          .from('balances')
-          .upsert({
-            user_id: transaction.user_id,
-            asset: 'USD',
-            balance: currentBalance + transaction.amount,
-          }, { onConflict: 'user_id, asset' });
+        const { error: balanceError } = await (supabase as any).rpc('update_balance_atomic', {
+          p_user_id: transaction.user_id,
+          p_asset: 'USD',
+          p_amount: transaction.amount
+        });
 
         if (balanceError) throw balanceError;
-
-
       }
 
       // Update transaction status
