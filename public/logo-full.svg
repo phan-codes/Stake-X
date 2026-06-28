@@ -1,14 +1,14 @@
 <svg viewBox="0 0 420 100" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <linearGradient id="brandGrad" x1="0%" y1="100%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#d97706" />
-      <stop offset="50%" stop-color="#f59e0b" />
-      <stop offset="100%" stop-color="#fbbf24" />
+      <stop offset="0%" stop-color="#7c3aed" />
+      <stop offset="50%" stop-color="#8b5cf6" />
+      <stop offset="100%" stop-color="#a78bfa" />
     </linearGradient>
   </defs>
   
   <g transform="translate(10, 10) scale(0.8)">
-    <!-- Main upward stroke (Amber) -->
+    <!-- Main upward stroke (Violet) -->
     <path d="M 12 84 L 12 88 L 34 88 L 88 16 L 88 12 L 66 12 Z" fill="url(#brandGrad)"/>
     
     <!-- Top-left crossing stroke (White) -->
@@ -20,6 +20,6 @@
 
   <!-- Typography -->
   <text x="110" y="66" font-family="'Montserrat', 'Inter', 'Segoe UI', sans-serif" font-size="44" font-weight="800" fill="#ffffff" letter-spacing="1">
-    Stake<tspan fill="#f59e0b">X</tspan>
+    Stake<tspan fill="#8b5cf6">X</tspan>
   </text>
 </svg>

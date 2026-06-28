@@ -155,22 +155,22 @@ ctx.textAlign = 'center';
 ctx.textBaseline = 'middle';
 
 // Subtle text glow
-ctx.shadowColor = 'rgba(245, 166, 35, 0.6)';
+ctx.shadowColor = 'rgba(139, 92, 246, 0.6)';
 ctx.shadowBlur = 28;
 
 ctx.font = 'bold 160px "Inter"';
-ctx.fillStyle = '#f59e0b';
+ctx.fillStyle = '#8b5cf6';
 ctx.textAlign = 'center';
 ctx.textBaseline = 'middle';
 ctx.fillText('StakeX', SIZE / 2, SIZE * 0.43);
 
 // Reset shadow for subtitle
 ctx.shadowBlur = 14;
-ctx.shadowColor = 'rgba(245, 166, 35, 0.4)';
+ctx.shadowColor = 'rgba(139, 92, 246, 0.4)';
 
 // "Digital Finance Cloud Solution" — two lines
 ctx.font = '500 62px Arial, sans-serif';
-ctx.fillStyle = '#E8982A';
+ctx.fillStyle = '#a78bfa';
 ctx.fillText('Digital Finance', SIZE / 2, SIZE * 0.595);
 ctx.fillText('Cloud Solution', SIZE / 2, SIZE * 0.685);
 
